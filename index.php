@@ -16,4 +16,8 @@
 
 <?php get_sidebar(); ?>
 
+<script>
+var nonce = <?= wp_create_nonce('wp_rest'); ?>;
+</script>
+
 <?php get_footer(); ?>
