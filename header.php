@@ -179,6 +179,7 @@
                             $header_user = woffice_get_settings_option('header_user');
                             if (is_user_logged_in()) :
                                 if ($header_user == "yep") : ?>
+                                test1
                                     <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
                                         <a href="javascript:void(0);" id="user-thumb">
                                             <?php
@@ -197,6 +198,7 @@
                                         <?php endif; ?>
                                     </div>
                                 <?php else: ?>
+                                test2
                                     <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
                                         <a href="<?php echo wp_logout_url() ?>" id="user-login"><i class="fa fa-sign-out-alt"></i></a>
                                     </div>
