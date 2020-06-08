@@ -157,29 +157,29 @@
 
                             <!-- USER INFORMATIONS -->
                             <?php
+                            /*
+                            * FRONT END CREATION
+                            */ 
+                            // CHECK IF USER CAN CREATE BLOG POST
+                            if ($woffice_role_allowed): ?>
+                                <?php
+                                /**
+                                 * Text of the button "Publish a new article" in the posts loop page
+                                 *
+                                 * @param string
+                                 */
+                                $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("New Blog Article", "woffice")); ?>
+                                
+                                <?php echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>'; ?>
+                                <?php Woffice_Frontend::frontend_render('post',$frontend_process); ?>
+                            <?php endif; ?>
+                            
+                            <?php
                             // CHECK FROM OPTIONS
                             $header_user = woffice_get_settings_option('header_user');
                             if (is_user_logged_in()) :
                                 if ($header_user == "yep") : ?>
                                     <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
-                                        <?php
-                                        /*
-                                        * FRONT END CREATION
-                                        */ 
-                                        // CHECK IF USER CAN CREATE BLOG POST
-                                        if ($woffice_role_allowed): ?>
-                                        <?php
-                                        /**
-                                         * Text of the button "Publish a new article" in the posts loop page
-                                         *
-                                         * @param string
-                                         */
-                                        $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("New Blog Article", "woffice")); ?>
-                                            
-                                            <?php echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>'; ?>
-                                            <?php Woffice_Frontend::frontend_render('post',$frontend_process); ?>
-                                        <?php endif; ?>
-
                                         <a href="javascript:void(0);" id="user-thumb">
                                             <?php
                                             $name_to_display = woffice_get_name_to_display();
