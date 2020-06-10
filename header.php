@@ -187,17 +187,17 @@
                                 <?php endif; ?>
 
                                 <?php
-                                    /*
-                                    * FRONT END CREATION
-                                    */ 
-                                    // CHECK IF USER CAN CREATE BLOG POST
-                                    $post_create = woffice_get_settings_option('post_create');
-                                    $woffice_role_allowed = Woffice_Frontend::role_allowed($post_create, 'post');
-                                    if ($woffice_role_allowed):
-                                        $hasError = Woffice_Frontend::frontend_process('post');   
-                                    endif;
+                                /*
+                                * FRONT END CREATION
+                                */ 
+                                // CHECK IF USER CAN CREATE BLOG POST
+                                $post_create = woffice_get_settings_option('post_create');
+                                $woffice_role_allowed = Woffice_Frontend::role_allowed($post_create, 'post');
+                                if ($woffice_role_allowed):
+                                    $hasError = Woffice_Frontend::frontend_process('post');   
+                                endif;
 
-                                    if ($woffice_role_allowed):
+                                if ($woffice_role_allowed):
                                         /**
                                          * Text of the button "Publish a new article" in the posts loop page
                                          *
@@ -205,11 +205,10 @@
                                          */
                                         $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("New Blog Article", "woffice"));
                                         echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>';
-                                        Woffice_Frontend::frontend_render('post',$hasError;
-                                    endif;
-                                    else : 
-                                ?>
+                                        Woffice_Frontend::frontend_render('post',$hasError; 
+                                endif; ?>
                                 
+                            <?php else : ?>
                                 <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
                                     <?php // SHOW LOGIN BUTTON
                                     $header_login = woffice_get_settings_option('header_login');
