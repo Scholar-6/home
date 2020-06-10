@@ -523,8 +523,9 @@ if(!function_exists('woffice_title')) {
             // Display the background image, if present
 	        $background_style = (!empty($final_image)) ? 'style="background-image: url(' . esc_url($final_image) .')";' : '';
 
-	        $layer_display_class = ($show_layer) ? 'd-block' : 'd-none';
-            echo '<div class="featured-background" '. $background_style .'><div class="featured-layer '. $layer_display_class .'"></div></div>';
+            $layer_display_class = ($show_layer) ? 'd-block' : 'd-none';
+            // Commenting this out because we dont want an image over the header 10/6/2020
+            //echo '<div class="featured-background" '. $background_style .'><div class="featured-layer '. $layer_display_class .'"></div></div>';
 
         } else {
 
