@@ -154,6 +154,11 @@
                                     </a>
                                 </div>
                             <?php } ?>
+                        </div>
+
+                        <!-- EXTRA BUTTONS ABOVE THE SIDBAR -->
+                        <div id="nav-buttons">
+
                             <?php
                             /*
                             * FRONT END CREATION
@@ -172,14 +177,10 @@
                                  *
                                  * @param string
                                  */
-                                $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("New Blog Article", "woffice"));
+                                $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("Create new manual or policy", "woffice"));
                                 
                                 echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>';                                    
                             endif; ?>
-                        </div>
-
-                        <!-- EXTRA BUTTONS ABOVE THE SIDBAR -->
-                        <div id="nav-buttons">
 
                             <?php // FETCHING SIDEBAR INFO
                             if($sidebar_state == 'show' || $sidebar_state == 'hide') :  ?>
