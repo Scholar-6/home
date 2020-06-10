@@ -184,10 +184,11 @@
                                     <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
                                         <a href="<?php echo wp_logout_url() ?>" id="user-login"><i class="fa fa-sign-out-alt"></i></a>
                                     </div>
-                                <?php endif; ?>       
+                                <?php endif; ?>
+
                                 <?php
                                     /*
-                                    * FRONT END POST CREATION
+                                    * FRONT END CREATION
                                     */ 
                                     // CHECK IF USER CAN CREATE BLOG POST
                                     $post_create = woffice_get_settings_option('post_create');
@@ -208,7 +209,7 @@
                                     endif;
                                     else : 
                                 ?>
-
+                                
                                 <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
                                     <?php // SHOW LOGIN BUTTON
                                     $header_login = woffice_get_settings_option('header_login');
