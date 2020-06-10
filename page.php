@@ -26,11 +26,7 @@ get_header();
 
 			<!-- START CONTENT -->
 			<div id="content">
-				<div class="frontend-wrapper box">
-					<div class="intern-padding">
-					<?php Woffice_Frontend::frontend_render('post',$hasError); ?>						
-					</div>
-				</div>
+				<?php Woffice_Frontend::frontend_render('post',$hasError); ?>
 
 				<?php 
 				if (woffice_is_user_allowed()) {
