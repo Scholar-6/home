@@ -526,6 +526,7 @@ if(!function_exists('woffice_title')) {
             $layer_display_class = ($show_layer) ? 'd-block' : 'd-none';
             // Commenting this out because we dont want an image over the header 10/6/2020
             //echo '<div class="featured-background" '. $background_style .'><div class="featured-layer '. $layer_display_class .'"></div></div>';
+            echo '<div style="clear:both;"></div>';
 
         } else {
 
