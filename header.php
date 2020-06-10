@@ -180,7 +180,6 @@
                                         <?php endif; ?>
                                     </div>
                                 <?php else: ?>
-                                    test
                                     <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
                                         <a href="<?php echo wp_logout_url() ?>" id="user-login"><i class="fa fa-sign-out-alt"></i></a>
                                     </div>
@@ -206,10 +205,9 @@
                                      */
                                     $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("New Blog Article", "woffice"));
                                     
-                                    echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>';
-                                    Woffice_Frontend::frontend_render('post',$frontend_process);
-                                    
+                                    echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>';                                    
                                 endif; ?>
+
                             <?php else : ?>
                                 <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
                                     <?php // SHOW LOGIN BUTTON
