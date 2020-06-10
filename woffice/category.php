@@ -18,6 +18,12 @@ get_header(); ?>
 			<!-- START CONTENT -->
 			<div id="content">
 
+				<div class="frontend-wrapper box">
+					<div class="intern-padding">
+					<?php Woffice_Frontend::frontend_render('post',$hasError); ?>						
+					</div>
+				</div>
+
                 <?php
                 $blog_layout = 'classic';
                 $content_type = 'content';

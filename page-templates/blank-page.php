@@ -1,13 +1,9 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other 'pages' on your WordPress site will use a different template.
+ * Template Name: Blank Page
  */
 
-get_header(); 
+get_header();
 ?>
 
 
@@ -16,7 +12,8 @@ get_header();
 
 		<?php  //GET THEME HEADER CONTENT
 
-		woffice_title(get_the_title()); ?> 	
+//		woffice_title(get_the_title());
+?>
 			
 		<?php // Start the Loop.
 		while ( have_posts() ) : the_post(); ?>
@@ -26,12 +23,13 @@ get_header();
 
 			<!-- START CONTENT -->
 			<div id="content">
+				
 				<div class="frontend-wrapper box">
 					<div class="intern-padding">
 					<?php Woffice_Frontend::frontend_render('post',$hasError); ?>						
 					</div>
 				</div>
-
+				
 				<?php 
 				if (woffice_is_user_allowed()) {
 					get_template_part( 'content', 'page' );
@@ -52,7 +50,7 @@ get_header();
 				
 		</div><!-- END #content-container -->
 		
-		<?php woffice_scroll_top(); ?>
+		<?php //woffice_scroll_top(); ?>
 
 	</div><!-- END #left-content -->
 
