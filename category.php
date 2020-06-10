@@ -9,7 +9,7 @@ get_header(); ?>
 	<div id="left-content">
 
 		<?php  //GET THEME HEADER CONTENT
-		$title = sprintf( __( 'Category Archives: <span>%s</span>', 'woffice' ), single_cat_title( '', false ));
+		$title = sprintf( __( '<span>%s</span>', 'woffice' ), single_cat_title( '', false ));
 		woffice_title($title); ?> 	
 
 		<!-- START THE CONTENT CONTAINER -->
