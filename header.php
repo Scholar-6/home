@@ -184,8 +184,7 @@
                                     <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
                                         <a href="<?php echo wp_logout_url() ?>" id="user-login"><i class="fa fa-sign-out-alt"></i></a>
                                     </div>
-                                <?php endif; ?>
-                                 button should show here       
+                                <?php endif; ?>       
                                 <?php
                                     /*
                                     * FRONT END POST CREATION
