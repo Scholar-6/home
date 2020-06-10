@@ -35,11 +35,8 @@ get_header();
 			<!-- START CONTENT -->
 			<div id="content">
 
-				<div class="frontend-wrapper box">
-					<div class="intern-padding">
-					<?php Woffice_Frontend::frontend_render('post',$hasError); ?>						
-					</div>
-				</div>
+				<!-- Create post -->
+				<?php Woffice_Frontend::frontend_render('post',$hasError); ?>
 				
 				<?php // We check for the layout
 				$blog_layout = 'classic';
@@ -77,35 +74,6 @@ get_header();
 				<!-- THE NAVIGATION --> 
 				<?php woffice_paging_nav(); ?>
 				
-				<?php
-				/*
-				 * FRONT END CREATION
-				 */ 
-				// CHECK IF USER CAN CREATE BLOG POST
-				if ($woffice_role_allowed): ?>
-					
-					<div class="frontend-wrapper box">
-						<div class="intern-padding">
-					
-							<div class="text-center" id="blog-bottom">
-
-								<?php
-                                /**
-                                 * Text of the button "Publish a new article" in the posts loop page
-                                 *
-                                 * @param string
-                                 */
-                                $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("New Blog Article", "woffice")); ?>
-								<?php echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>'; ?>
-								
-							</div>
-							
-							<?php Woffice_Frontend::frontend_render('post',$frontend_process); ?>
-														
-						</div>
-					</div>
-				
-				<?php endif; ?>
 			</div>
 				
 		</div><!-- END #content-container -->
