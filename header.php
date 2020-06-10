@@ -154,66 +154,28 @@
                                     </a>
                                 </div>
                             <?php } ?>
-
-                            <!-- USER INFORMATIONS -->
                             <?php
-                            // CHECK FROM OPTIONS
-                            $header_user = woffice_get_settings_option('header_user');
-
-                            if (is_user_logged_in()) : ?>
-                                <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
-                                    <?php if ($header_user == "yep") : ?>
-                                        <a href="javascript:void(0);" id="user-thumb">
-                                            <?php
-                                            $name_to_display = woffice_get_name_to_display();
-                                            echo __('Hi', 'woffice') .' <b class="font-weight-bold">'. $name_to_display .'</b>';
-                                            ?>
-                                            <?php // GET CURRENT USER ID
-                                            $user_ID = get_current_user_id();
-                                            echo get_avatar($user_ID);
-                                            ?>
-                                        </a>
-                                        <?php if(function_exists('bp_is_active')) : ?>
-                                            <a href="javascript:void(0)" id="user-close">
-                                                <i class="fa fa-arrow-circle-right"></i>
-                                            </a>
-                                        <?php endif; ?>
-                                    <?php else: ?>
-                                        <a href="<?php echo wp_logout_url() ?>" id="user-login"><i class="fa fa-sign-out-alt"></i></a>
-                                    <?php endif; ?>
-
-                                    <?php
-                                    /*
-                                    * FRONT END CREATION
-                                    */ 
-                                    // CHECK IF USER CAN CREATE BLOG POST
-                                    $post_create = woffice_get_settings_option('post_create');
-                                    $woffice_role_allowed = Woffice_Frontend::role_allowed($post_create, 'post');
-                                    if ($woffice_role_allowed):
-                                        
-                                        $hasError = Woffice_Frontend::frontend_process('post');
-                                        
-                                    endif;
-                                    if ($woffice_role_allowed): 
-                                        /**
-                                         * Text of the button "Publish a new article" in the posts loop page
-                                         *
-                                         * @param string
-                                         */
-                                        $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("New Blog Article", "woffice"));
-                                        
-                                        echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>';                                    
-                                    endif; ?>
-                                </div>
-                            <?php else : ?>
-                                <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
-                                    <?php // SHOW LOGIN BUTTON
-                                    $header_login = woffice_get_settings_option('header_login');
-                                    if (!empty($header_login) && $header_login == "yep") {
-                                        echo '<a href="'.wp_login_url().'" id="user-login"><i class="fa fa-sign-in-alt"></i></a>';
-                                    } ?>
-                                </div>
-                            <?php endif; ?>
+                            /*
+                            * FRONT END CREATION
+                            */ 
+                            // CHECK IF USER CAN CREATE BLOG POST
+                            $post_create = woffice_get_settings_option('post_create');
+                            $woffice_role_allowed = Woffice_Frontend::role_allowed($post_create, 'post');
+                            if (is_user_logged_in() && $woffice_role_allowed):
+                                
+                                $hasError = Woffice_Frontend::frontend_process('post');
+                                
+                            endif;
+                            if ($woffice_role_allowed): 
+                                /**
+                                 * Text of the button "Publish a new article" in the posts loop page
+                                 *
+                                 * @param string
+                                 */
+                                $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("New Blog Article", "woffice"));
+                                
+                                echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>';                                    
+                            endif; ?>
                         </div>
 
                         <!-- EXTRA BUTTONS ABOVE THE SIDBAR -->
@@ -269,6 +231,43 @@
                                 <a href="javascript:void(0)" id="nav-notification-trigger" title="<?php _e( 'View your notifications', 'woffice' ); ?>" class="<?php echo (bp_notifications_get_unread_notification_count( bp_loggedin_user_id() ) >= 1) ? "active" : "" ?>">
                                     <i class="fa fa-bell"></i>
                                 </a>
+                            <?php endif; ?>
+
+                            <!-- USER INFORMATIONS -->
+                            <?php
+                            // CHECK FROM OPTIONS
+                            $header_user = woffice_get_settings_option('header_user');
+
+                            if (is_user_logged_in()) : ?>
+                                <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
+                                    <?php if ($header_user == "yep") : ?>
+                                        <a href="javascript:void(0);" id="user-thumb">
+                                            <?php
+                                            $name_to_display = woffice_get_name_to_display();
+                                            echo __('Hi', 'woffice') .' <b class="font-weight-bold">'. $name_to_display .'</b>';
+                                            ?>
+                                            <?php // GET CURRENT USER ID
+                                            $user_ID = get_current_user_id();
+                                            echo get_avatar($user_ID);
+                                            ?>
+                                        </a>
+                                        <?php if(function_exists('bp_is_active')) : ?>
+                                            <a href="javascript:void(0)" id="user-close">
+                                                <i class="fa fa-arrow-circle-right"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        <a href="<?php echo wp_logout_url() ?>" id="user-login"><i class="fa fa-sign-out-alt"></i></a>
+                                    <?php endif; ?>
+                                </div>
+                            <?php else : ?>
+                                <div id="nav-user" class="clearfix <?php echo (function_exists('bp_is_active')) ? 'bp_is_active' : ''; ?>">
+                                    <?php // SHOW LOGIN BUTTON
+                                    $header_login = woffice_get_settings_option('header_login');
+                                    if (!empty($header_login) && $header_login == "yep") {
+                                        echo '<a href="'.wp_login_url().'" id="user-login"><i class="fa fa-sign-in-alt"></i></a>';
+                                    } ?>
+                                </div>
                             <?php endif; ?>
 
                         </div>
