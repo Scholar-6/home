@@ -177,7 +177,7 @@
                                  *
                                  * @param string
                                  */
-                                $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("Create new manual or policy", "woffice"));
+                                $new_blog_button_text = apply_filters('woffice_new_blog_article_button_text', __("new document", "woffice"));
                                 
                                 echo'<a href="#" class="btn btn-default frontend-wrapper__toggle" data-action="display" id="show-blog-create"><i class="fa fa-plus-square"></i> '. $new_blog_button_text .'</a>';                                    
                             endif; ?>
