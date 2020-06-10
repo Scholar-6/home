@@ -30,11 +30,7 @@ get_header(); ?>
 				<!-- START CONTENT -->
 				<div id="content">
 					
-					<div class="frontend-wrapper box">
-						<div class="intern-padding">
-                        <?php Woffice_Frontend::frontend_render('post',$hasError); ?>						
-						</div>
-					</div>
+					<?php Woffice_Frontend::frontend_render('post',$hasError); ?>
 					
 					<?php $post_classes = array('box','content'); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class($post_classes); ?>>
