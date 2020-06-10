@@ -154,7 +154,7 @@
                                     </a>
                                 </div>
                             <?php } ?>
-                            test 1
+                            
                             <!-- USER INFORMATIONS -->
                             <?php
                             // CHECK FROM OPTIONS
