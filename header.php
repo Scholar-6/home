@@ -185,7 +185,7 @@
                                         <a href="<?php echo wp_logout_url() ?>" id="user-login"><i class="fa fa-sign-out-alt"></i></a>
                                     </div>
                                 <?php endif; ?>
-
+                                 button should show here       
                                 <?php
                                     /*
                                     * FRONT END POST CREATION
