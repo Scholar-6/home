@@ -37,7 +37,7 @@ gulp.task('assets-css', function () {
 
     // Animate CSS & Bootstrap
     var cssStream = gulp.src([
-        './../node_modules/animate.css/animate.min.css'
+        './node_modules/animate.css/animate.min.css'
     ])
     .pipe(concat('css-asssets.css'));
 
@@ -96,8 +96,8 @@ gulp.task('compress', function () {
 gulp.task('dashboard-js', function () {
     // returns a Node.js stream, but no handling of error messages
     return gulp.src([
-            './../node_modules/draggabilly/dist/draggabilly.pkgd.min.js',
-            './../node_modules/packery/dist/packery.pkgd.min.js'
+            './node_modules/draggabilly/dist/draggabilly.pkgd.min.js',
+            './node_modules/packery/dist/packery.pkgd.min.js'
         ])
         .pipe(uglify())
         .pipe(concat('dashboard.min.js'))
