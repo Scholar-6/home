@@ -29,7 +29,7 @@ get_header(); ?>
 				<!-- START CONTENT -->
 				<div id="content">
 				
-					<?php Woffice_Frontend::frontend_render('post',$hasError); ?>
+					<?php //Woffice_Frontend::frontend_render('post',$hasError); ?>
 
 					<?php // We check for the role : 
 					if (woffice_is_user_allowed()) { ?>
@@ -70,7 +70,7 @@ get_header(); ?>
 									</div>
 
                                     <?php if($edit_allowed) : ?>
-                                        <?php Woffice_Frontend::frontend_render('post', $process_result, get_the_ID()); ?>
+                                        <?php //Woffice_Frontend::frontend_render('post', $process_result, get_the_ID()); ?>
                                     <?php endif; ?>
 									<?php //Woffice_Frontend::frontend_render('post',$frontend_process); ?>
 									
