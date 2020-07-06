@@ -72,7 +72,7 @@ get_header(); ?>
                                     <?php if($edit_allowed) : ?>
                                         <?php Woffice_Frontend::frontend_render('post', $process_result, get_the_ID()); ?>
                                     <?php endif; ?>
-									<?php Woffice_Frontend::frontend_render('post',$frontend_process); ?>
+									<?php //Woffice_Frontend::frontend_render('post',$frontend_process); ?>
 									
 								</div>
 							</div>
